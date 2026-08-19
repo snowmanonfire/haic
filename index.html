@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HAIC — The Himalayan AI Corridor Project</title>
+<meta name="description" content="HAIC is building a connected network of AI compute facilities across Nepal — powered by green hydropower and cooled by the Himalayas.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,500&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #0A1722;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background: #FFFFFF;
+  }
+  a { color: #C5983F; text-decoration: none; }
+  a:hover { color: #8A6A25; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header / Hero */
+  header.hero {
+    position: relative;
+    background:
+      radial-gradient(120% 130% at 0% 0%, #FFFFFF 0%, #FFFFFF 26%, rgba(255,255,255,0) 46%),
+      linear-gradient(to bottom right, #FFFFFF 0%, #FFFFFF 30%, #EAF1F7 45%, #C3D6E6 58%, #7DA5C6 72%, #2F6592 86%, #093254 100%);
+    padding: 40px 24px 70px;
+    overflow: hidden;
+  }
+  .brandbar { display: flex; align-items: center; gap: 16px; max-width: 1100px; margin: 0 auto 48px; }
+  .brandbar img { width: 52px; height: 52px; object-fit: contain; flex: none; }
+  .brandbar-text { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .brandbar-title { font-weight: 700; letter-spacing: 0.28em; font-size: 13px; text-transform: uppercase; color: #0D467A; }
+  .brandbar-title span { color: #C5983F; }
+  .brandbar-rule { height: 1px; background: linear-gradient(90deg, rgba(197,152,63,0.85), rgba(197,152,63,0)); }
+
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #2E4F35; font-weight: 700; margin-bottom: 18px; }
+  h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 44px; line-height: 1.12; letter-spacing: -0.02em; color: #093254; margin-bottom: 22px; }
+  h1 em { font-style: italic; color: #C5983F; }
+  .hero-sub { font-size: 16px; color: #223D57; max-width: 480px; }
+
+  .logo-mark { position: relative; height: 220px; display: flex; align-items: center; justify-content: center; }
+  .logo-glow { position: absolute; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(254,223,139,0.5) 0%, rgba(197,152,63,0.2) 34%, rgba(197,152,63,0) 70%); pointer-events: none; }
+  .logo-card { position: relative; width: 180px; height: 220px; background: #FFFFFF; box-shadow: 0 0 0 14px #FFFFFF; overflow: hidden; }
+  .logo-card img { width: 100%; height: 100%; object-fit: contain; opacity: 0.9; }
+
+  .wave { display: block; width: 100%; height: 64px; }
+
+  /* Feature grid */
+  .features { padding: 50px 24px 10px; }
+  .lead { font-family: 'Fraunces', serif; font-weight: 400; font-size: 21px; line-height: 1.5; color: #0D467A; max-width: 900px; margin-bottom: 44px; }
+  .lead strong { font-weight: 600; color: #C5983F; }
+  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .feature { padding-top: 18px; border-top: 3px solid #C5983F; }
+  .feature-title { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+  .diamond { width: 12px; height: 14px; flex: none; margin-top: 3px; background: #C5983F; clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); }
+  .feature h3 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0D467A; }
+  .feature p { font-size: 13.5px; color: #2C3B34; }
+
+  /* Corridor ahead banner */
+  .banner {
+    position: relative;
+    background: linear-gradient(135deg, #093254 0%, #0D467A 55%, #355652 140%);
+    color: #FFFFFF;
+    padding: 60px 24px;
+    margin-top: 60px;
+    overflow: hidden;
+  }
+  .banner::before {
+    content: ""; position: absolute; top: -80px; right: -40px; width: 260px; height: 260px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(254,223,139,0.22) 0%, rgba(197,152,63,0) 70%);
+  }
+  .banner-inner { position: relative; max-width: 1100px; margin: 0 auto; }
+  .banner-eyebrow { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: #FEDF8B; font-weight: 700; margin-bottom: 14px; }
+  .banner h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 26px; line-height: 1.35; letter-spacing: -0.015em; max-width: 760px; }
+  .banner h2 em { font-style: italic; color: #FEDF8B; }
+
+  /* Contact section */
+  .contact { padding: 70px 24px; background: #FAF9F5; }
+  .contact-inner { max-width: 620px; margin: 0 auto; }
+  .contact-eyebrow { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: #2E4F35; font-weight: 700; margin-bottom: 14px; }
+  .contact h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; color: #093254; margin-bottom: 12px; }
+  .contact p.intro { color: #223D57; margin-bottom: 32px; font-size: 15px; }
+
+  form.contact-form { display: flex; flex-direction: column; gap: 18px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #0D467A; margin-bottom: 6px; }
+  input, textarea {
+    width: 100%; font-family: inherit; font-size: 14px; color: #0A1722;
+    padding: 12px 14px; border: 1.5px solid #D8D2C2; border-radius: 6px; background: #FFFFFF;
+  }
+  input:focus, textarea:focus { outline: none; border-color: #C5983F; }
+  textarea { resize: vertical; min-height: 120px; }
+  button.submit-btn {
+    align-self: flex-start; margin-top: 6px; padding: 13px 28px; border: none; border-radius: 6px;
+    background: #093254; color: #FFFFFF; font-weight: 700; font-size: 14px; letter-spacing: 0.03em;
+    cursor: pointer; transition: background 0.15s ease;
+  }
+  button.submit-btn:hover { background: #0D467A; }
+  button.submit-btn:disabled { background: #9AA7B0; cursor: not-allowed; }
+  .form-status { font-size: 13.5px; margin-top: 4px; }
+  .form-status.success { color: #2E4F35; }
+  .form-status.error { color: #B23A3A; }
+  .direct-email { margin-top: 28px; font-size: 13.5px; color: #5A6B74; }
+
+  /* Footer */
+  footer.site-footer {
+    padding: 26px 24px; display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; letter-spacing: 0.03em; color: #5A6B74; flex-wrap: wrap; gap: 10px;
+  }
+  footer.site-footer .domain { color: #C5983F; font-weight: 700; letter-spacing: 0.05em; }
+
+  @media (max-width: 780px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .logo-mark { display: none; }
+    h1 { font-size: 34px; }
+    .feature-grid { grid-template-columns: 1fr; gap: 28px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="brandbar">
+    <img src="assets/haic-emblem.png" alt="HAIC emblem">
+    <div class="brandbar-text">
+      <div class="brandbar-title">HAIC<span> —</span> The Himalayan AI Corridor Project</div>
+      <div class="brandbar-rule"></div>
+    </div>
+  </div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Compute, at altitude</div>
+      <h1>The world needs more compute.<br>The mountains were <em>built for it.</em></h1>
+      <p class="hero-sub">HAIC is building a connected network of AI compute facilities across Nepal — drawing on abundant green hydropower and the natural cooling of high, clean Himalayan air. One corridor. Many sites. Compute that scales with the world's demand.</p>
+    </div>
+    <div class="logo-mark">
+      <div class="logo-glow"></div>
+      <div class="logo-card">
+        <img src="assets/haic-mark.png" alt="HAIC — The Himalayan AI Corridor Project">
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1200 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;left:0;right:0;bottom:-1px;">
+    <path d="M0,110 L0,60 L120,38 L230,68 L340,26 L470,62 L600,16 L720,54 L840,32 L980,66 L1090,42 L1200,62 L1200,110 Z" fill="#FFFFFF"></path>
+  </svg>
+</header>
+
+<section class="features wrap">
+  <p class="lead">Every leap in artificial intelligence rests on one thing: <strong>the ability to compute.</strong> HAIC exists to supply it — cleanly, efficiently, and at scale — from one of the few places on earth where nature does the hardest work for you.</p>
+
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="feature-title">
+        <div class="diamond"></div>
+        <h3>Powered by green energy</h3>
+      </div>
+      <p>Nepal's hydropower is clean, renewable and abundant. HAIC sites run on it — turning the country's greatest natural resource into the fuel for global intelligence.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-title">
+        <div class="diamond"></div>
+        <h3>Cooled by the Himalayas</h3>
+      </div>
+      <p>At altitude, the air is cool, thin and clean. HAIC uses it directly — free-air cooling that cuts energy, cost and complexity that conventional datacenters cannot escape.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-title">
+        <div class="diamond"></div>
+        <h3>Built as an optimized network</h3>
+      </div>
+      <p>Not one facility, but a corridor of them. A repeatable model that grows site by site, designed to serve customers of every kind, anywhere in the world.</p>
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="banner-inner">
+    <div class="banner-eyebrow">The corridor ahead</div>
+    <h2>A single, expanding network of high-altitude compute — ready to serve <em>every class of customer, across the globe,</em> in whatever arrangement the future demands.</h2>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-eyebrow">Get in touch</div>
+    <h2>Contact Us</h2>
+    <p class="intro">Contact us with any questions at <a href="mailto:info@himalayanaicorridor.com">info@himalayanaicorridor.com</a>, or fill out the form below — messages sent here go straight to <strong>haic@himalayanaicorridor.com</strong>.</p>
+
+    <form class="contact-form" id="contactForm">
+      <!-- Get a free access key at https://web3forms.com — paste it below -->
+      <input type="hidden" name="access_key" value="04346cbb-403f-46d8-b6d3-2ea0392df68b">
+      <input type="hidden" name="subject" value="New message from himalayanaicorridor.com">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="form-row">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+      </div>
+
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="How can we help?"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Send message</button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span>HAIC — The Himalayan AI Corridor Project</span>
+  <span class="domain">himalayanaicorridor.com</span>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  const btn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    status.textContent = '';
+    status.className = 'form-status';
+
+    const formData = new FormData(form);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+      const result = await res.json();
+      if (result.success) {
+        status.textContent = "Thanks — your message has been sent. We'll be in touch soon.";
+        status.classList.add('success');
+        form.reset();
+      } else {
+        throw new Error(result.message || 'Something went wrong');
+      }
+    } catch (err) {
+      status.textContent = "Something went wrong sending your message. Please email info@himalayanaicorridor.com directly.";
+      status.classList.add('error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+    }
+  });
+</script>
+
+</body>
+</html>
